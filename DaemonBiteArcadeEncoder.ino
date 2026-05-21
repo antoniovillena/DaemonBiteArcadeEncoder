@@ -69,7 +69,7 @@ void loop(){
         buttons2 ^= 1<<pin,
         buttonsMillis[14+pin] = millisNow;
     if( ((buttonsDire1^buttons1) & 0x2000) && (millisNow - buttonsMillis[13]) > DEBOUNCE_TIME ){
-      if( (~buttonsDire1 & 0x2000) && (millisNow - millisStart)>3000 )
+      if( (~buttonsDire1 & 0x2000) && (millisNow - millisStart)>2000 )
         buttons2 ^= 0x200;  // Service
       buttons1 ^= 0x2000;
       millisStart = buttonsMillis[13] = millisNow;
